@@ -1,0 +1,95 @@
+.NavBar a, .NavBar button {
+	margin: 0 5px;
+	cursor: pointer;
+}
+
+.NavBar {
+	margin-bottom: 20px;
+	font-size: 20px; 
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: bold;
+	color: rgb(104, 52, 104);
+	text-align: center;
+	width: 100%;
+	
+	/* background-color: white; */
+}
+.padded-multiline { 
+	line-height: 1.3; 
+	padding: 2px 0; 
+	
+	width: 400px;
+	margin: 20px auto;
+  }
+  .padded-multiline p { 
+	font-size: 10px;	
+	padding: 4px 0;
+	color: rgb(10, 10, 10); 
+	display: inline;
+	margin: 0; 
+	position: relative;
+	left: -10px; 
+	word-break: break-all;
+  }
+  
+  .card {
+	  float: left;
+	  display: grid;
+	  grid-template: 550px / auto auto auto;
+	  grid-gap: 10px;
+	 /* background-color: #2196F3;  */
+	  padding: 10px;
+	  font-size: 10px; 
+	  text-align: center; 
+	  
+  }
+  span.remove {
+	  background-color: red;
+	  color: white;
+	  border: 5px;
+	  padding: 5px;
+	  margin: 5px;
+	  border-radius: 10%;
+	  flex-direction: column;
+	  text-align: center;
+  }
+  span.save {
+	  background-color: purple;
+	  color:white; 
+	  margin: 5px;
+  }
+  span.edit {
+	background-color:blue;
+	color:white; 
+}
+body {background: #eccf77
+	
+}
+
+.card { 
+	background-color: rgba(245, 245, 245, 0.4); 
+	text-align: center; 
+}
+.card-header, .card-footer { 
+	opacity: 1}
+
+.list-box {
+	background-color: rgba(245, 245, 245, 0.4);
+    opacity: 1;
+}
+  
+  .list-box {
+	margin: 30px;
+	background-color: #ffffff;
+	border: 1px solid black;
+	opacity: 0.6;
+  }
+  
+  .list-box p {
+	margin: 5%;
+	font-weight: bold;
+	color: #000000;
+  }
+
+
+ 
