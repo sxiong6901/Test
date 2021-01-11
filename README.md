@@ -1,44 +1,24 @@
-## Table of Contents
-  * [Title](#Title)
-  * [Description](#About)
-  * [Installation](#Installation)
-  * [Deployment](#Deployed)
-  * [Demo](#Demo)
-  * [License](#license)
-  * [Technologies](#Technologies)
-  * [Author](#Author)
+# The Budget Buffet
 
-## Title
-The Budget Buffet
+## Technologies Used: Node.js, Mongoose/Mongo, Express, React.js, JSX
 
-## About
-This app was created with the purpose of helping people impacted by Covid-19 financially by allowing them to enter the ingredients they have in their home and a recipe is generated based off of the entered ingredients.
-
-## Installation
-* git clone repository
-* npm install
-* npm run start
-
-## Deployed
-This App is deployed on Heroku: https://budget-buffet.herokuapp.com
-
-![myimage-alt-tag](https://github.com/sxiong6901/TheBudgetBuffet/blob/main/client/public/The%20budget%20buffet.JPG)
-
-## Demo
-![Demo](https://github.com/sxiong6901/TheBudgetBuffet/blob/main/client/public/demo.gif?raw=true)
-
-## License
-MIT
+### Overview
 
 
-## Technologies
-Node.js, Mongoose/Mongo, Express, React.js, JSX
 
-## Author
-* Felicia Wright
-* James Lee
-* Shawanda Ford
-* Soua Xiong
+### Installation + Development
 
-Felicia & James: Front End CSS
-Pa and Shawanda: Back End
+git clone https://github.com/sxiong6901/TheBudgetBuffet.git
+cd to folder
+npm install
+npm run start
+
+
+# About The Budget Buffet:
+
+## This app was created with the purpose of helping people impacted by Covid-19 financially by allowing them to enter the ingredients they have in their home and a recipe is generated based off of the entered ingredients.
+
+# Roles:
+
+## Felicia & James: Front End CSS
+## Pa and Shawanda: Back End
