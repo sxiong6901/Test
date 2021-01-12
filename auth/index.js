@@ -1,5 +1,5 @@
 const jwt = require('jsonwebtoken')
-const db = require('../models')
+const User = require('../models/User.js')
 
 // Note this is the supper secret for signing the JWT
 // this should be acquired via .env or a microservice
@@ -25,7 +25,7 @@ function verifyToken(req, res, next) {
 		// if problem with token verification, deny access
 		if(err) return res.json({success: false, message: "Invalid token."})
 		// otherwise, search for user by id that was embedded in token
-		db.User.findById(decodedData._id, (err, user) => {
+		User.findById(decodedData._id, (err, user) => {
 			// if no user, deny access
 			if(!user) return res.json({success: false, message: "Invalid token."})
 			// otherwise, add user to req object

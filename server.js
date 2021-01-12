@@ -30,11 +30,6 @@ app.use(logger('dev'))
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }));
 
-if (process.env.NODE_ENV === 'production') {
-    app.use(express.static('client/build'));
-  }
-  
-
 //////////////////////////////////
 ////     api catalogue     //////
 ////////////////////////////////
