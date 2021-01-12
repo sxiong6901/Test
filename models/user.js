@@ -16,12 +16,12 @@ const userSchema = new mongoose.Schema({
 			ingrediants: {
 				type: String,
 				trim: true,
-				required: "Every recipe needs ingrediants"
+				required: "Every recipe needs ingredients"
 			},
 			instructions: {
 				type: String,
 				trim: true,
-				required: "Every recipe needs ingrediants"
+				required: "Every recipe needs ingredients"
 			}
 		}
 	]
