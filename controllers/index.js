@@ -1,5 +1,5 @@
 const jwtDecode = require('jwt-decode')
-const User = require('../models/User.js')
+const db = require('../models')
 const jokes = require('../data')
 const signToken = require('../auth').signToken
 
@@ -21,14 +21,14 @@ module.exports = {
 		let userProfile = jwtDecode(token)
 		let joke = jokes[Math.floor(Math.random() * jokes.length)]
 		// note we execute .lean() to convert a mongoose document to js doc
-		let doc = await User.find({ email: userProfile.email }).lean()
+		let doc = await db.User.find({ email: userProfile.email }).lean()
 		doc[0].joke = joke
 		res.json(doc)
 	},
 
 	// create a new user
 	create: (req, res) => {
-		User.create(req.body, (err, user) => {
+		db.User.create(req.body, (err, user) => {
 			console.log('Sign up! It works!')
 			console.log(req.body)
 			console.log(user)
@@ -41,7 +41,7 @@ module.exports = {
 
 	// update an existing user
 	update: (req, res) => {
-		User.findById(req.params.id, (err, user) => {
+		db.User.findById(req.params.id, (err, user) => {
 			Object.assign(user, req.body)
 			user.save((err, updatedUser) => {
 				res.json({ success: true, message: "User updated.", user })
@@ -51,7 +51,7 @@ module.exports = {
 
 	// delete an existing user
 	destroy: (req, res) => {
-		User.findByIdAndRemove(req.params.id, (err, user) => {
+		db.User.findByIdAndRemove(req.params.id, (err, user) => {
 			res.json({ success: true, message: "User deleted.", user })
 		})
 	},
@@ -59,7 +59,7 @@ module.exports = {
 	// the login route
 	authenticate: (req, res) => {
 		// check if the user exists
-		User.findOne({ email: req.body.email }, (err, user) => {
+		db.User.findOne({ email: req.body.email }, (err, user) => {
 			// if there's no user or the password is invalid
 			if (!user || !user.validPassword(req.body.password)) {
 				// deny access
@@ -77,7 +77,7 @@ module.exports = {
 		}
 		let userProfile = jwtDecode(token)
 		console.log(userProfile)
-		User.findByIdAndUpdate(
+		db.User.findByIdAndUpdate(
 			userProfile._id,
 			{ $push: { recipes: req.body } },
 			{ new: true, runValidators: true }
@@ -111,7 +111,7 @@ module.exports = {
 		console.log("Req.Params:", req.params)
 		
 
-		const user = await User.findById(userProfile._id)
+		const user = await db.User.findById(userProfile._id)
 		const recipes=user.recipes.filter(recipe=>`${recipe._id}` !== req.params.id)
 		user.recipes=recipes
 		await user.save()
@@ -153,7 +153,7 @@ module.exports = {
 		}
 		let userProfile = jwtDecode(token)
 		console.log(userProfile)
-		User.findById(userProfile._id, (err, user) => {
+		db.User.findById(userProfile._id, (err, user) => {
 			if (err) {
 				console.log(err);
 				return res.sendStatus(500);
