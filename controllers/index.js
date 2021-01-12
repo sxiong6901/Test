@@ -1,5 +1,5 @@
 const jwtDecode = require('jwt-decode')
-const User = require('../models/user.js')
+const User = require('../models/User.js')
 const jokes = require('../data')
 const signToken = require('../auth').signToken
 
